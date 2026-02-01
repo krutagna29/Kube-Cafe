@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #6F4E37;        /* Rich coffee brown */
+  --accent-color: #CC6633;         /* Burnt orange */
+  --background-color: #F5F5DC;     /* Light beige */
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'PT Sans', sans-serif;
+}
+
+/* ====== Section Styling ====== */
+#gallery {
+  background-color: var(--background-color);
+  padding: 4rem 1rem;
+  font-family: var(--body-font);
+  min-height: 30vh;
+}
+
+#gallery h2 {
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#gallery p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #555;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ====== Masonry Grid Styling ====== */
+.list {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 350px;
+  transition: height 0.3s ease;
+  margin-top: 2rem;
+}
+
+/* Each tile wrapper */
+.item-wrapper {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, filter, opacity;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+/* Tile image styling */
+.item-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.item-wrapper:hover .item-img {
+  transform: scale(1.03);
+}
+
+/* Optional color overlay */
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 0, 150, 0.4), rgba(0, 150, 255, 0.4));
+  opacity: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.text-coffee {
+  color: var(--primary-color);
+}
+
+/* ====== Responsive Fixes ====== */
+@media (max-width: 768px) {
+  #gallery {
+    padding: 3rem 1rem;
+  }
+
+  #gallery h2 {
+    font-size: 1.8rem;
+  }
+
+  #gallery p {
+    font-size: 1rem;
+  }
+
+  .item-wrapper {
+    padding: 2px; /* reduce spacing on small screens */
+  }
+
+  .item-img {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #gallery h2 {
+    font-size: 1.5rem;
+  }
+
+  #gallery p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,260 @@
+/* ========== Shared responsive styles for admin panel pages ========== */
+
+/* Page container */
+.admin-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.admin-page-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-page-subtitle {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .admin-page-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Page header (title row) - stack on small screens */
+.admin-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .admin-page-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .admin-page-header {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Tables: horizontal scroll on small screens */
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+.admin-table-wrap .table {
+  min-width: 600px; /* prevent over-squash */
+  margin-bottom: 0;
+}
+
+.admin-table-wrap--wide .table {
+  min-width: 880px;
+}
+
+@media (max-width: 575px) {
+  .admin-table-wrap .table {
+    font-size: 0.875rem;
+  }
+
+  .admin-table-wrap .table th,
+  .admin-table-wrap .table td {
+    padding: 0.5rem 0.35rem;
+    white-space: nowrap;
+  }
+}
+
+/* Card-style rows for very small screens (optional - use .admin-table-cards) */
+@media (max-width: 767px) {
+  .admin-table-cards .admin-table-wrap {
+    overflow: visible;
+  }
+
+  .admin-table-cards .table {
+    min-width: 0;
+  }
+
+  .admin-table-cards .table thead {
+    display: none;
+  }
+
+  .admin-table-cards .table tbody tr {
+    display: block;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .admin-table-cards .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .admin-table-cards .table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .admin-table-cards .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #495057;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+}
+
+/* Forms: stack on mobile */
+.admin-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.admin-form-row .form-control,
+.admin-form-row .form-select {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .admin-form-row .col,
+  .admin-form-row .col-auto {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Pagination: wrap and smaller on mobile */
+.admin-pagination-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .admin-pagination-wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.admin-pagination-info {
+  font-size: 0.875rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .admin-pagination-info {
+    text-align: left;
+  }
+}
+
+.admin-pagination-wrap .pagination {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.admin-pagination-wrap .page-link {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.875rem;
+}
+
+/* Dashboard: KPI cards and chart */
+.admin-dashboard .card-body {
+  padding: 0.75rem;
+}
+
+@media (min-width: 576px) {
+  .admin-dashboard .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Hourly chart: fewer labels on small screens */
+.admin-chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 180px;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 576px) {
+  .admin-chart-bars {
+    height: 200px;
+    gap: 4px;
+  }
+}
+
+.admin-chart-bar-item {
+  flex: 0 0 auto;
+  min-width: 12px;
+  text-align: center;
+}
+
+.admin-chart-bar-item .bar-fill {
+  min-height: 4px;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Loading / empty states */
+.admin-loading,
+.admin-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+  color: #6c757d;
+}
+
+/* Buttons: full width on small screens where appropriate */
+@media (max-width: 575px) {
+  .admin-btn-stack-sm .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .admin-btn-stack-sm .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Image in tables */
+.admin-table-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (min-width: 576px) {
+  .admin-table-img {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,102 @@
+:root {
+  --primary-color: #6F4E37;      /* Coffee brown */
+  --accent-color: #CC6633;       /* Burnt orange */
+  --background-color: #F5F5DC;   /* Light beige */
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'PT Sans', sans-serif;
+}
+
+/* Hero Section Base */
+.hero-section {
+  height: 80vh;
+  min-height: 600px;
+  background-color: #000;
+  font-family: var(--body-font);
+  position: relative;
+}
+
+/* Background Image */
+.hero-bg {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Overlay */
+.overlay {
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Headline */
+.hero-title {
+  font-family: var(--heading-font);
+  color: var(--accent-color);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Accent Button */
+.btn-accent {
+  background-color: var(--accent-color);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: #b34f1f;
+}
+
+/* Ensure content stays above background */
+.z-2 {
+  z-index: 2;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .info-card {
+    font-size: 0.85rem;
+    padding: 0.75rem !important;
+  }
+
+  .today-offer {
+    font-size: 0.9rem;
+    padding: 0.75rem !important;
+  }
+}
+
+/* Info Cards */
+.info-card {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Today's Offer */
+.today-offer {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}

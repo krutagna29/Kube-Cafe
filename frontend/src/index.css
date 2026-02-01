@@ -1,0 +1,27 @@
+:root {
+  --primary: #6F4E37;
+  --background: #F5F5DC;
+  --accent: #CC6633;
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'PT Sans', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--body-font);
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--heading-font);
+  color: var(--primary);
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}

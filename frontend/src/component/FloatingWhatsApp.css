@@ -1,0 +1,51 @@
+.floating-whatsapp {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floating-whatsapp .card {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.floating-whatsapp button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-whatsapp button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+  .floating-whatsapp {
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+
+  .floating-whatsapp .card {
+    width: calc(100vw - 2rem) !important;
+  }
+}
+

@@ -1,0 +1,139 @@
+/* Container for full screen layout with background */
+.login-container {
+  background-image: url('../assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 2rem; */
+}
+
+/* Card with glass effect */
+.login-card {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Inner padding */
+.login-card .card-body {
+  padding: 2.5rem;
+}
+
+/* Cafe Brand Logo */
+.cafe-logo {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #6F4E37;
+}
+
+.cafe-logo .coffee-icon {
+  color: #fd7e14;
+  margin: 0 0.5rem;
+}
+
+/* Form input focus */
+.form-control:focus {
+  border-color: #fd7e14;
+  box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.25);
+}
+
+/* Primary button styling */
+.btn-prim {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-prim:hover {
+  background-color: #e8690b;
+  border-color: #e8690b;
+}
+
+/* Outline secondary button */
+.btn-outline-sec {
+  color: #fd7e14;
+  border: 2px solid #fd7e14;
+  background-color: transparent;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  /* margin: 0.5rem 0; You can adjust this as needed */
+}
+
+.btn-outline-sec:hover {
+  background-color: #fd7e14;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(253, 126, 20, 0.4);
+}
+
+
+/* Auth links */
+.text-decoration-none {
+  color: #fd7e14;
+  transition: color 0.2s ease;
+}
+
+.text-decoration-none:hover {
+  color: #e8690b;
+}
+
+/* Responsive Typography & Spacing */
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 100%;
+    margin: 1rem;
+  }
+
+  .login-card .card-body {
+    padding: 2rem;
+  }
+
+  .btn-prim {
+    font-size: 1rem;
+    padding: 0.65rem 1.5rem;
+  }
+
+  .cafe-logo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .btn-prim {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .cafe-logo {
+    font-size: 1.8rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+}

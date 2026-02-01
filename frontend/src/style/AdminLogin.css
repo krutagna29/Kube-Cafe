@@ -1,0 +1,123 @@
+/* Fullscreen container with background */
+.kube-admin-login {
+  background-image: url('../assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Login card with glassmorphism */
+.login-box {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Logo */
+.login-box .logo {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.login-box h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6f4e37; /* coffee brown */
+  margin-bottom: 1.5rem;
+}
+
+/* Input fields */
+.login-box input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #fd7e14;
+  box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.25);
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 2.5rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6f4e37;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #fd7e14;
+}
+
+/* Button */
+.login-box button[type="submit"] {
+  width: 100%;
+  background-color: #fd7e14;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-box button[type="submit"]:hover {
+  background-color: #e8690b;
+}
+
+/* Error message */
+.error {
+  margin-top: 1rem;
+  color: #d9534f;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 1.5rem;
+  }
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+  .login-box button {
+    font-size: 1rem;
+  }
+}

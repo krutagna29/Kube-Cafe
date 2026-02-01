@@ -1,0 +1,248 @@
+/* ========== Variables ========== */
+:root {
+  --admin-nav-width: 260px;
+  --admin-nav-bg: #1a1d21;
+  --admin-nav-text: #e2e8f0;
+  --admin-nav-accent: #fd7e14;
+  --admin-nav-accent-hover: #e8690b;
+  --admin-nav-active-bg: rgba(253, 126, 20, 0.12);
+  --admin-header-height: 56px;
+}
+
+/* ========== Mobile header (top bar) ========== */
+.admin-nav-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--admin-header-height);
+  background: var(--admin-nav-bg);
+  color: var(--admin-nav-text);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1001;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.admin-nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: var(--admin-nav-text);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-nav-toggle:hover {
+  background: var(--admin-nav-active-bg);
+  color: var(--admin-nav-accent);
+}
+
+.admin-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--admin-nav-text);
+}
+
+.admin-nav-brand-icon {
+  flex-shrink: 0;
+  color: var(--admin-nav-accent);
+}
+
+.admin-nav-header-spacer {
+  width: 44px; /* balance toggle button */
+}
+
+/* ========== Overlay (mobile) ========== */
+.admin-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.admin-nav-overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ========== Sidebar / Drawer ========== */
+.admin-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--admin-nav-width);
+  height: 100vh;
+  background: var(--admin-nav-bg);
+  color: var(--admin-nav-text);
+  z-index: 1003;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.admin-nav-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.25rem 0;
+}
+
+.admin-nav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-nav-brand--sidebar {
+  font-size: 1.25rem;
+}
+
+.admin-nav-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: var(--admin-nav-text);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-nav-close:hover {
+  background: var(--admin-nav-active-bg);
+  color: var(--admin-nav-accent);
+}
+
+/* ========== Nav links ========== */
+.admin-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0.75rem;
+  flex: 1;
+}
+
+.admin-nav-links li {
+  margin-bottom: 0.25rem;
+}
+
+.admin-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--admin-nav-text);
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-link:hover {
+  background: var(--admin-nav-active-bg);
+  color: var(--admin-nav-accent);
+}
+
+.admin-link--active {
+  background: var(--admin-nav-active-bg);
+  color: var(--admin-nav-accent);
+}
+
+.admin-link-icon {
+  flex-shrink: 0;
+}
+
+/* ========== Footer (logout) ========== */
+.admin-nav-footer {
+  padding: 1rem 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  background: var(--admin-nav-accent);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.admin-logout:hover {
+  background: var(--admin-nav-accent-hover);
+}
+
+.admin-logout:active {
+  transform: scale(0.98);
+}
+
+/* ========== Responsive: tablet and below ========== */
+@media (max-width: 991px) {
+  .admin-nav-header {
+    display: flex;
+  }
+
+  .admin-nav-overlay {
+    display: block;
+  }
+
+  .admin-nav {
+    transform: translateX(-100%);
+  }
+
+  .admin-nav--open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .admin-nav-close {
+    display: flex;
+  }
+}
+
+/* ========== Responsive: main content offset ========== */
+@media (max-width: 991px) {
+  .admin-layout.has-admin-nav .admin-layout-main {
+    padding-top: var(--admin-header-height);
+  }
+}
+
+/* ========== Desktop: ensure sidebar visible ========== */
+@media (min-width: 992px) {
+  .admin-nav-header,
+  .admin-nav-overlay,
+  .admin-nav-close {
+    display: none;
+  }
+
+  .admin-nav {
+    transform: none;
+  }
+}

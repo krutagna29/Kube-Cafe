@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #6F4E37;       /* Coffee brown */
+  --background-color: #F5F5DC;    /* Light beige */
+  --accent-color: #CC6633;        /* Burnt orange */
+}
+
+.footer-section {
+  background-color: var(--background-color);
+  color: #333;
+  font-family: 'PT Sans', sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-icon {
+  color: #888;
+  font-size: 1.25rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Responsive Text */
+.footer-section p,
+.footer-section .footer-brand {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-section p,
+  .footer-section .footer-brand {
+    text-align: left;
+  }
+}
+
+/* Small devices */
+@media (max-width: 576px) {
+  .footer-section .footer-brand {
+    font-size: 1.25rem;
+  }
+
+  .footer-section .footer-icon {
+    font-size: 1.1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+  }
+
+  .footer-section .text-muted {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,27 @@
+.admin-layout {
+  --admin-nav-width: 260px;
+  display: flex;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+.admin-layout-main {
+  flex: 1;
+  min-width: 0; /* allow shrinking on small screens */
+  padding: 1.5rem;
+  margin-left: 0;
+  transition: margin-left 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .admin-layout-main {
+    margin-left: var(--admin-nav-width, 260px);
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .admin-layout-main {
+    padding: 1rem;
+  }
+}
